@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_page">
+    <sp_page action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <css/>
+        <draft>false</draft>
+        <dynamic_title_structure/>
+        <id>ap_index</id>
+        <internal>false</internal>
+        <public>false</public>
+        <roles/>
+        <short_description/>
+        <sys_class_name>sp_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-01-12 17:33:08</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>e0c3a8764feb0b004bf034a18110c78c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ap_index</sys_name>
+        <sys_package display_value="Absence application" source="x_162627_absence_a">ffffd5884f63c3004bf034a18110c72c</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Absence application">ffffd5884f63c3004bf034a18110c72c</sys_scope>
+        <sys_update_name>sp_page_e0c3a8764feb0b004bf034a18110c78c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-01-12 17:33:08</sys_updated_on>
+        <title>ap_index</title>
+    </sp_page>
+    <sys_translated_text action="delete_multiple" query="documentkey=e0c3a8764feb0b004bf034a18110c78c"/>
+</record_update>

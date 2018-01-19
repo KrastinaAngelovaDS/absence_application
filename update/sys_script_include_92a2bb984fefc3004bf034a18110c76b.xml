@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_162627_absence_a.getUserManager</api_name>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>getUserManager</name>
+        <script><![CDATA[function getUserManager(userId){
+	var gr = new GlideRecord('sys_user');
+	if(gr.get(userId)){
+		var manager = gr.getValue('manager');
+		if(manager){
+			return manager;
+		} else {
+			return userId;
+		}
+	} else {
+		return '';
+	}
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-01-05 14:15:20</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>92a2bb984fefc3004bf034a18110c76b</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>getUserManager</sys_name>
+        <sys_package display_value="Absence application" source="x_162627_absence_a">ffffd5884f63c3004bf034a18110c72c</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Absence application">ffffd5884f63c3004bf034a18110c72c</sys_scope>
+        <sys_update_name>sys_script_include_92a2bb984fefc3004bf034a18110c76b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-01-09 16:11:19</sys_updated_on>
+    </sys_script_include>
+</record_update>

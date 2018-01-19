@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description>Days cannot be negative number or zero.</description>
+        <field>number_of_days</field>
+        <global>true</global>
+        <messages/>
+        <name>Validate number of days</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+	if (isLoading || newValue === '') {
+		return;
+	}
+	if(newValue <= 0){
+		g_form.showFieldMsg('number_of_days','Number of days MUST be bigger than 0','error');
+		return false;
+		//Type appropriate comment here, and begin script below
+	} else {
+		g_form.hideFieldMsg('number_of_days');
+	}
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-01-04 12:21:39</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>7d5d8ecc4fe3c3004bf034a18110c758</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Validate number of days</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Absence application" source="x_162627_absence_a">ffffd5884f63c3004bf034a18110c72c</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Absence application">ffffd5884f63c3004bf034a18110c72c</sys_scope>
+        <sys_update_name>sys_script_client_7d5d8ecc4fe3c3004bf034a18110c758</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-01-04 14:15:32</sys_updated_on>
+        <table>x_162627_absence_a_absence</table>
+        <type>onChange</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

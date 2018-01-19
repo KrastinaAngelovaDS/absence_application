@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sysevent_register">
+    <sysevent_register action="INSERT_OR_UPDATE">
+        <description>Notify manager that user has a medical leave</description>
+        <event_name>x_162627_absence_a.medical_leave.info</event_name>
+        <fired_by>BaseValidation Business rule</fired_by>
+        <queue/>
+        <suffix>medical_leave.info</suffix>
+        <sys_class_name>sysevent_register</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-01-12 11:50:36</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>cc2557ea4f2b0b004bf034a18110c7a5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_162627_absence_a.medical_leave.info</sys_name>
+        <sys_package display_value="Absence application" source="x_162627_absence_a">ffffd5884f63c3004bf034a18110c72c</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Absence application">ffffd5884f63c3004bf034a18110c72c</sys_scope>
+        <sys_update_name>sysevent_register_cc2557ea4f2b0b004bf034a18110c7a5</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-01-12 11:50:36</sys_updated_on>
+        <table>x_162627_absence_a_absence</table>
+    </sysevent_register>
+</record_update>

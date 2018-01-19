@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function() {
+  /* widget controller */
+  var c = this;
+	var events = [];
+	
+	for(var i = 0; i < c.data.events.length; i++){
+			var event = c.data.events[i];
+			var end = moment(event.end, 'YYYY-MM-DD').add(1, 'days');		
+		  event.end = end;
+		  events.push(event);
+	}
+	$('#calendar').fullCalendar({
+   // events: source,
+    header: {
+        left: '',
+        center: 'prev title next',
+        right: ''
+    },
+		
+		events: events
+
+});
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>ap-absence-calendar</id>
+        <internal>false</internal>
+        <link/>
+        <name>ap_absence_calendar</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+  var grAbs = new GlideRecord('x_162627_absence_a_absence');
+	grAbs.addQuery('status','!=','canceled');
+	grAbs.addQuery('status','!=','rejected');
+	grAbs.query();
+	
+	var events = [];
+	while(grAbs.next()){
+		var color;
+		if(grAbs.status == 'requested' || grAbs.status == 'wait_approval'){
+			color = '#d2d9db';//grey
+		} else {
+			if(grAbs.type == 'paid_leave'){
+				color = '#4ed84e';//green
+			} else if (grAbs.type == 'unpaid_leave'){
+				color = '#e05323';
+			} else {
+				color = '#1ea8ce';
+			}
+		}
+		var event = {
+			id: grAbs.sys_id,
+			start: grAbs.start_date.toString(),
+			end: grAbs.end_date.toString(),
+			title: grAbs.requester.first_name +" "+ grAbs.requester.last_name,
+			color: color,
+			allDay: true
+		}
+		events.push(event);
+	}
+	
+	data.events = events;
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-01-12 18:02:07</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>d56aa43a4feb0b004bf034a18110c792</sys_id>
+        <sys_mod_count>54</sys_mod_count>
+        <sys_name>ap_absence_calendar</sys_name>
+        <sys_package display_value="Absence application" source="x_162627_absence_a">ffffd5884f63c3004bf034a18110c72c</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Absence application">ffffd5884f63c3004bf034a18110c72c</sys_scope>
+        <sys_update_name>sp_widget_d56aa43a4feb0b004bf034a18110c792</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-01-15 09:56:17</sys_updated_on>
+        <template><![CDATA[<div id ='calendar'>
+<!-- your widget template -->
+</div>]]></template>
+    </sp_widget>
+</record_update>

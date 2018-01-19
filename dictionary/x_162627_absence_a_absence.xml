@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element attributes="calendar_elements=requester;" label="Absence" max_length="40" name="x_162627_absence_a_absence" type="collection">
+        <element default="javascript:getUserManager(gs.getUserID())" label="Approver" max_length="32" name="approver" read_only="true" reference="sys_user" type="reference"/>
+        <element display="true" label="Assigned to" max_length="32" name="assigned_to" read_only="true" reference="sys_user" type="reference"/>
+        <element label="Assignment group" max_length="32" name="assignment_group" read_only="true" reference="sys_user_group" type="reference"/>
+        <element label="Close notes" max_length="200" name="close_notes" read_only="true" type="string"/>
+        <element label="End Date" mandatory="true" max_length="40" name="end_date" type="glide_date"/>
+        <element label="Number of days" max_length="40" name="number_of_days" read_only="true" type="integer"/>
+        <element default="javascript:gs.getUserID()" dynamic_default_value="2fd8e97bef3221002841f7f775c0fbc1" label="Requester" mandatory="true" max_length="32" name="requester" reference="sys_user" type="reference" use_dynamic_default="true"/>
+        <element label="Start Date" mandatory="true" max_length="40" name="start_date" type="glide_date"/>
+        <element choice="3" default="requested" label="Status" max_length="40" name="status" type="choice">
+            <choice>
+                <element label="Requested" sequence="100" value="requested"/>
+                <element label="Wait approval" sequence="200" value="wait_approval"/>
+                <element label="Approved" sequence="300" value="approved"/>
+                <element label="Rejected" sequence="400" value="rejected"/>
+                <element label="Canceled" sequence="500" value="canceled"/>
+                <element label="Closed" sequence="600" value="closed"/>
+            </choice>
+        </element>
+        <element choice="3" default="paid_leave" label="Type" mandatory="true" max_length="40" name="type" type="choice">
+            <choice>
+                <element label="Paid Leave" sequence="100" value="paid_leave"/>
+                <element label="Unpaid Leave" sequence="200" value="unpaid_leave"/>
+                <element label="Medical Leave" sequence="300" value="medical_leave"/>
+            </choice>
+        </element>
+        <index name="index">
+            <element name="approver"/>
+        </index>
+        <index name="index2">
+            <element name="requester"/>
+        </index>
+        <index name="index3">
+            <element name="assignment_group"/>
+        </index>
+        <index name="index4">
+            <element name="assigned_to"/>
+        </index>
+    </element>
+</database>

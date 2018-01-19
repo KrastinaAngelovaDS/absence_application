@@ -28,7 +28,7 @@
         <sys_updated_on>2018-01-04 08:53:02</sys_updated_on>
         <template/>
         <trackable>true</trackable>
-        <user_role display_value="x_162627_absence_a.user" name="x_162627_absence_a.user">0000ad844fa3c3004bf034a18110c7f4</user_role>
+        <user_role/>
         <vendor/>
         <vendor_prefix/>
         <version>1.0.0</version>

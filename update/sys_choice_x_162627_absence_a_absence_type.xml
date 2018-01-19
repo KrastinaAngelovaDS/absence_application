@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="type" table="x_162627_absence_a_absence" version="3">
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Paid Leave</label>
+            <language>en</language>
+            <name>x_162627_absence_a_absence</name>
+            <sequence>100</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-01-04 09:32:23</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>d2e8ed884fa3c3004bf034a18110c796</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-01-04 09:33:48</sys_updated_on>
+            <value>paid_leave</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Unpaid Leave</label>
+            <language>en</language>
+            <name>x_162627_absence_a_absence</name>
+            <sequence>200</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-01-04 09:32:40</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>ac09e5884f63c3004bf034a18110c75b</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-01-04 09:33:53</sys_updated_on>
+            <value>unpaid_leave</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>type</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Medical Leave</label>
+            <language>en</language>
+            <name>x_162627_absence_a_absence</name>
+            <sequence>300</sequence>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-01-04 09:33:29</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>7419a5084f63c3004bf034a18110c72c</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-01-04 09:33:58</sys_updated_on>
+            <value>medical_leave</value>
+        </sys_choice>
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>type</element>
+            <name>x_162627_absence_a_absence</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2018-01-04 09:32:23</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>1809e1c84fa3c3004bf034a18110c712</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>type</sys_name>
+            <sys_package display_value="Absence application" source="x_162627_absence_a">ffffd5884f63c3004bf034a18110c72c</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Absence application">ffffd5884f63c3004bf034a18110c72c</sys_scope>
+            <sys_update_name>sys_choice_x_162627_absence_a_absence_type</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2018-01-04 09:32:23</sys_updated_on>
+        </sys_choice_set>
+    </sys_choice>
+</record_update>

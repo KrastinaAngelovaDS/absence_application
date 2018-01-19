@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_ui_action">
+    <sys_ui_action action="INSERT_OR_UPDATE">
+        <action_name>cancel_absence</action_name>
+        <active>true</active>
+        <client>false</client>
+        <comments/>
+        <condition>!current.isNewRecord() &amp;&amp; current.status != 'closed' &amp;&amp; current.status != 'canceled' &amp;&amp; (current.requester == gs.getUserID() || gs.hasRole('x_162627_absence_a.admin'))</condition>
+        <form_action>true</form_action>
+        <form_button>true</form_button>
+        <form_context_menu>false</form_context_menu>
+        <form_link>false</form_link>
+        <form_style/>
+        <hint/>
+        <list_action>false</list_action>
+        <list_banner_button>false</list_banner_button>
+        <list_button>false</list_button>
+        <list_choice>false</list_choice>
+        <list_context_menu>false</list_context_menu>
+        <list_link>false</list_link>
+        <list_save_with_form_button>false</list_save_with_form_button>
+        <list_style/>
+        <name>Cancel</name>
+        <onclick/>
+        <order>300</order>
+        <script><![CDATA[if(current.status == 'approved'){
+	var days = parseInt(current.number_of_days);
+	//Find the user
+	var ugr = new GlideRecord('sys_user');
+	if(ugr.get(current.requester)){
+		if(current.type == 'paid_leave'){
+			//If payed leave validate days left
+			var leftPaidLeaves = parseInt(ugr.getValue('x_162627_absence_a_left_paid_leaves'));
+			ugr.x_162627_absence_a_left_paid_leaves= leftPaidLeaves + days;
+		} else if(current.type == 'unpaid_leave') {
+			//increment the used unpaid leaves
+			var usedUnpaidLeaves = parseInt(ugr.getValue('x_162627_absence_a_used_unpaid_leaves'));
+			ugr.x_162627_absence_a_used_unpaid_leaves = usedUnpaidLeaves - days;
+		} else {
+			var usedMedicalLeaves = parseInt(ugr.getValue('x_162627_absence_a_used_medical_leaves'));
+			ugr.x_162627_absence_a_used_medical_leaves = usedMedicalLeaves - days;
+		}
+		ugr.update();
+		current.status = 'canceled';
+		current.update();
+	}
+	
+} else {
+	current.status = 'canceled';
+	current.update();
+}]]></script>
+        <show_insert>true</show_insert>
+        <show_multiple_update>false</show_multiple_update>
+        <show_query>false</show_query>
+        <show_update>true</show_update>
+        <sys_class_name>sys_ui_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-01-10 14:59:38</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>6fbbe1ca4f27c7004bf034a18110c759</sys_id>
+        <sys_mod_count>10</sys_mod_count>
+        <sys_name>Cancel</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Absence application" source="x_162627_absence_a">ffffd5884f63c3004bf034a18110c72c</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Absence application">ffffd5884f63c3004bf034a18110c72c</sys_scope>
+        <sys_update_name>sys_ui_action_6fbbe1ca4f27c7004bf034a18110c759</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-01-11 11:47:27</sys_updated_on>
+        <table>x_162627_absence_a_absence</table>
+        <ui11_compatible>true</ui11_compatible>
+        <ui16_compatible>false</ui16_compatible>
+    </sys_ui_action>
+</record_update>
